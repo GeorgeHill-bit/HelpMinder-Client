@@ -10,7 +10,7 @@ class EitemCreate extends React.Component {
         }
 
     componentWillMount() {
-        console.log("componentWillMount")
+        // console.log("componentWillMount")
         this.setState({
             modal: true
             })
@@ -45,11 +45,12 @@ class EitemCreate extends React.Component {
                 modal: false 
             })
             this.props.updateEitemsArray()
+            this.props.createSuccess()
         })
     }
 
   render() {
-      console.log(this.props, this.state)
+    //   console.log(this.props, this.state)
     return (
         <div>
         {/* <Button size="sm" color="success" onClick={this.toggle}>Create New Event</Button> */}

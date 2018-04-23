@@ -24,7 +24,7 @@ class EitemUpdate extends React.Component {
     }
  
     componentWillMount() {
-        console.log("componentWillMount")
+        // console.log("componentWillMount")
         this.setState({
             id: this.props.eitem.id,
             category: this.props.eitem.category,
@@ -62,7 +62,7 @@ class EitemUpdate extends React.Component {
 
     handleUpdate = (event) => { 
         event.preventDefault();
-        console.log("EitemUpdate invoked. "+this.state.id)
+        // console.log("EitemUpdate invoked. "+this.state.id)
         fetch("http://localhost:3000/api/log/"+this.state.id, {
             method: 'PUT',
             body: JSON.stringify({ log: this.state }),
@@ -77,11 +77,12 @@ class EitemUpdate extends React.Component {
                 modal: false
             })
             this.props.updateEitemsArray()
+            this.props.updateSuccess()
         })
     }
 
     render() {
-        console.log(this.props, this.state)
+        // console.log(this.props, this.state)
         return (
             <div>
             <Modal isOpen={this.props.modal}>

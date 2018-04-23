@@ -18,7 +18,7 @@ class EitemTable extends React.Component {
     // }
 
     update(e, eitem) {
-        console.log("EitemTable - update")
+        // console.log("EitemTable - update")
         this.setState({
             eitem: eitem,
             updatePressed: true        
@@ -43,8 +43,8 @@ class EitemTable extends React.Component {
                             <th width="150">Category</th>
                             <th width="250">Event</th>
                             <th width="150">DateDue</th>
-                            <th width="150">Owner</th>
                             <th width="150">Frequency</th>
+                            <th width="150">Owner</th>
                             <th width="150">Location</th>
                             <th width="150">Purpose</th>
                             <th width="150">Created</th>

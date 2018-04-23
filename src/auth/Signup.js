@@ -6,6 +6,7 @@ class Signup extends Component {
         super()
         this.state = {
             username: '',
+            emailaddr: '',
             password: ''
         }
     }
@@ -37,6 +38,10 @@ class Signup extends Component {
                     <FormGroup>
                         <Label for="username">Username</Label>
                         <Input id="su-username" name="username" type="text" placeholder="enter username" onChange={this.handleChange}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="email">Email</Label>
+                        <Input id="su-email" name="email" type="text" placeholder="enter email address" onChange={this.handleChange}/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>

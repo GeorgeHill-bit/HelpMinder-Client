@@ -17,7 +17,7 @@ class EitemSetup extends React.Component {
     }
     
     componentWillMount() {
-        console.log("componentWillMount")
+        // console.log("componentWillMount")
         this.fetchEitems()
     }
 
@@ -36,7 +36,7 @@ class EitemSetup extends React.Component {
     }
 
     eitemCreate = (event) => {
-        console.log("eitemCreate invoked.")
+        // console.log("eitemCreate invoked.")
         this.setState({
             updatePressed: false,
             createPressed: true,
@@ -53,9 +53,16 @@ class EitemSetup extends React.Component {
         })
     }
 
+    createSuccess = (event) => {
+        this.setState({
+            createPressed: false,
+            modal: false
+        })
+    }
+
     eitemUpdate = (event, eitem) => {
         event.preventDefault();
-        console.log("eitemUpdate invoked.")
+        // console.log("eitemUpdate invoked.")
         this.setState({
             eitem: eitem,
             createPressed: false,
@@ -74,9 +81,17 @@ class EitemSetup extends React.Component {
         })
     }
 
+    updateSuccess = (event) => {
+        this.setState({
+            eitem: '',
+            updatePressed: false,
+            modal: false
+        })
+    }
+
     eitemDelete = (event, eitem) => {
         // event.preventDefault();
-        console.log("eitemDelete invoked. "+eitem.id)
+        // console.log("eitemDelete invoked. "+eitem.id)
         fetch("http://localhost:3000/api/log/"+eitem.id, {
             method: 'DELETE',
             body: JSON.stringify({ log: eitem }),
@@ -92,7 +107,7 @@ class EitemSetup extends React.Component {
     }
 
     render () {
-        {console.log(this.state)}
+        // {console.log(this.state)}
         return( 
             <Container className="auth-container">
                 <Row>
@@ -100,6 +115,7 @@ class EitemSetup extends React.Component {
                         {(this.state.createPressed || this.state.eitems < 1 ) ?
                         <EitemCreate  
                             createCancel={this.createCancel}
+                            createSuccess={this.createSuccess}
                             token={this.props.token}
                             eitems={this.state.eitems} 
                             create={this.EitemCreate} 
@@ -110,6 +126,7 @@ class EitemSetup extends React.Component {
                         : (this.state.updatePressed) ?
                         <EitemUpdate 
                             updateCancel={this.updateCancel}
+                            updateSuccess={this.updateSuccess}
                             token={this.props.token} 
                             eitem={this.state.eitem}
                             updateEitemsArray={this.fetchEitems}

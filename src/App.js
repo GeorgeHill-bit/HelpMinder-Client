@@ -61,7 +61,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("App.js started")
+    // console.log("App.js started")
     return (
       <Router>
         <div>

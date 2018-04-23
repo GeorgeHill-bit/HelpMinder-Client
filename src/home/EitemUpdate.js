@@ -60,11 +60,12 @@ class EitemUpdate extends React.Component {
     //     })
     // }
 
-    handleUpdate = (event, eitem) => { 
+    handleUpdate = (event) => { 
+        event.preventDefault();
         console.log("EitemUpdate invoked. "+this.state.id)
-        fetch("http://localhost:3000/api/log/"+eitem.id, {
+        fetch("http://localhost:3000/api/log/"+this.state.id, {
             method: 'PUT',
-            body: JSON.stringify({ log: eitem }),
+            body: JSON.stringify({ log: this.state }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': this.props.token 

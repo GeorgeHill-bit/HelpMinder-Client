@@ -18,8 +18,8 @@ class EitemUpdate extends React.Component {
             location: '',
             purpose: '',
             createdAt: '',
-            updatedAt: '',
-            modal: true
+            updatedAt: ''
+
         };
     }
  
@@ -72,8 +72,11 @@ class EitemUpdate extends React.Component {
             })
         })
         .then((res) => {
-            this.setState({ updatePressed: false })
-            this.fetchEitems(); 
+            this.setState({ 
+                updatePressed: false, 
+                modal: false
+            })
+            this.props.updateEitemsArray()
         })
     }
 
@@ -81,7 +84,7 @@ class EitemUpdate extends React.Component {
         console.log(this.props, this.state)
         return (
             <div>
-            <Modal isOpen={this.state.modal}>
+            <Modal isOpen={this.props.modal}>
             <form onSubmit={this.handleUpdate}>
             <ModalHeader>Update Event</ModalHeader>
             <ModalBody>
@@ -165,7 +168,7 @@ class EitemUpdate extends React.Component {
             </ModalBody>
             <ModalFooter>
                 <Button type="submit" size="sm" color="primary">Update Event</Button>
-                <Button size="sm" color="danger" onClick={this.props.updateCancel}>Cancel</Button>
+                <Button size="sm" color="warning" onClick={this.props.updateCancel}>Cancel</Button>
             </ModalFooter>
             </form>
             </Modal>

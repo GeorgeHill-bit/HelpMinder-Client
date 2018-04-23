@@ -67,8 +67,8 @@ class EitemTable extends React.Component {
                                         <td>{eitem.purpose}</td>
                                         <td>{eitem.createdAt.substr(0,10)}</td>
                                         <td>{eitem.updatedAt.substr(0,10)}</td>
-                                        <td><Button id={eitem.id} onClick={e => this.props.update(e, eitem)} size="sm" color="warning">Update</Button></td>
-                                        <td><Button id={eitem.id} onClick={e => this.props.delete(e, eitem)} size="sm" color="danger">Delete</Button></td>
+                                        <td><Button id={eitem.id} onClick={e => this.props.update(e, eitem)} size="sm" color="primary">Update</Button></td>
+                                        <td><Button id={eitem.id} onClick={e => this.props.delete(e, eitem)} size="sm" color="warning">Delete</Button></td>
                                     </tr>
                                 )
                             })

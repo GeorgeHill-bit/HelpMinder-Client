@@ -35,28 +35,21 @@ class EitemSetup extends React.Component {
         })
     }
 
-    // cancelCreate = (e) => {
-    //     console.log("cancelCreate - "+this.state)
-    //     this.setState({
-    //         modal: false,
-    //         createPressed: false
-    //     })
-    // }
-
-    updateCancel = (e) => {
-        this.setState({
-            eitem: '',
-            updatePressed: false,
-            modal: false
-        })
-    }
-
     eitemCreate = (event) => {
         console.log("eitemCreate invoked.")
         this.setState({
             updatePressed: false,
             createPressed: true,
             modal: true
+        })
+        this.fetchEitems();
+    }
+
+    createCancel = (event) => {
+        event.preventDefault();  
+        this.setState({
+            createPressed: false,
+            modal: false
         })
     }
 
@@ -72,6 +65,15 @@ class EitemSetup extends React.Component {
         this.fetchEitems();
     }
 
+    updateCancel = (event) => {
+        event.preventDefault();
+        this.setState({
+            eitem: '',
+            updatePressed: false,
+            modal: false
+        })
+    }
+
     eitemDelete = (event, eitem) => {
         // event.preventDefault();
         console.log("eitemDelete invoked. "+eitem.id)
@@ -84,7 +86,7 @@ class EitemSetup extends React.Component {
             })
         })
             .then((res) => {
-                // this.setState({ updatePressed: false })
+                this.setState({ createPressed: false })
                 this.fetchEitems(); 
             })
     }
@@ -96,19 +98,23 @@ class EitemSetup extends React.Component {
                 <Row>
                     <Col md="12" className="event-table"> 
                         {(this.state.createPressed || this.state.eitems < 1 ) ?
-                        <EitemCreate 
+                        <EitemCreate  
+                            createCancel={this.createCancel}
                             token={this.props.token}
+                            eitems={this.state.eitems} 
                             create={this.EitemCreate} 
-                            updateEitemsArray={this.fetchEitems} 
+                            updateEitemsArray={this.fetchEitems}
+                            createPressed={this.state.createPressed}
+                            modal={this.state.modal}
                         /> 
                         : (this.state.updatePressed) ?
                         <EitemUpdate 
                             updateCancel={this.updateCancel}
                             token={this.props.token} 
                             eitem={this.state.eitem}
+                            updateEitemsArray={this.fetchEitems}
                             updatePressed={this.state.updatePressed}
                             modal={this.state.modal}
-
                         /> 
                         : <div></div> }
                         <EitemTable 

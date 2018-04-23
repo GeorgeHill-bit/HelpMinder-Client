@@ -5,14 +5,16 @@ import { Button, Form, InputGroup, InputGroupAddon, InputGroupText, Input } from
 class EitemCreate extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { modal: false };
         this.toggle = this.toggle.bind(this);
         this.handleCreate = this.handleCreate.bind(this);
         }
 
-    // componentWillMount() {
-    //     console.log("componentWillMount")
-    //     }
+    componentWillMount() {
+        console.log("componentWillMount")
+        this.setState({
+            modal: true
+            })
+        }
 
     toggle() {
         this.setState({
@@ -27,7 +29,6 @@ class EitemCreate extends React.Component {
     }
 
     handleCreate = (event) => {
-        // console.log(this.state)
         event.preventDefault();
         fetch(`http://localhost:3000/api/log/`, {
             method: 'POST',
@@ -39,24 +40,19 @@ class EitemCreate extends React.Component {
         })
         .then((res) => res.json())
         .then((logData) => {
-            this.props.updateEitemsArray()
-            this.setState({
-                category: '',
-                event: '',
-                due: '',
-                freq: '',
-                owner: '',
-                location: '',
-                purpose: '',
-                modal: false
+            this.setState({ 
+                createPressed: false,
+                modal: false 
             })
+            this.props.updateEitemsArray()
         })
     }
 
   render() {
+      console.log(this.props, this.state)
     return (
         <div>
-        <Button size="sm" color="success" onClick={this.toggle}>Create New Event</Button>
+        {/* <Button size="sm" color="success" onClick={this.toggle}>Create New Event</Button> */}
         <Modal isOpen={this.state.modal}>
         <form onSubmit={this.handleCreate}>
         <ModalHeader>Create event</ModalHeader>
@@ -121,8 +117,8 @@ class EitemCreate extends React.Component {
             <br />
         </ModalBody>
         <ModalFooter>
-            <input type="submit" value="Create Event" size="sm" color="primary" className="btn btn-primary" />
-            <Button size="sm" color="danger" onClick={this.toggle}>Cancel</Button>
+            <Button type="submit" size="sm" color="primary">Create Event</Button>
+            <Button type="button" size="sm" color="warning" onClick={this.props.createCancel}>Cancel</Button>
         </ModalFooter>
         </form>
         </Modal>

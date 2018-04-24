@@ -28,11 +28,12 @@ class App extends Component {
   componentWillMount() {
     const token = localStorage.getItem('token')
     if (token && !this.state.sessionToken) {
-      this.setState({ sessionToken: token }); 
+      // this.setState({ sessionToken: token }); 
     }
   }
 
   logout = () => {
+    // console.log('"HelpMinder: User "'+this.state.username+'" logged out.')
     this.setState({
       sessionToken: '',
       userName: ''
@@ -53,7 +54,6 @@ class App extends Component {
       return (
         <Route path="/auth" >
           <Auth setToken={this.setSessionState} 
-
             />
         </Route>
       )

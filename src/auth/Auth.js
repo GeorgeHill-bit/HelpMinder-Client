@@ -16,12 +16,12 @@ const Auth = (props) => {
                 <br />
             </Row>
             <Row>
-                <Col md="2" ></Col>
-                <Col md="3" className="signin-col">
+                <Col md="1" ></Col>
+                <Col md="5" className="signin-col">
                     <Signup setToken={props.setToken} />
                 </Col>
-                <Col md="3" ></Col>
-                <Col md="3" className="login-col">
+                <Col md="1" ></Col>
+                <Col md="5" className="login-col">
                     <Login setToken={props.setToken} />
                 </Col>
             </Row>

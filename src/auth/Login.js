@@ -14,6 +14,9 @@ class Login extends Component {
 
     handleChange = (event) => {
         this.setState({
+            hmusermsg: '',
+            hmemailmsg: '',
+            hmpswdmsg: '',
             [event.target.name]: event.target.value
         })
     }
@@ -29,11 +32,12 @@ class Login extends Component {
         })
         .then(response => response.json())
         .then(data => { 
-            console.log(data.message)
             if (data.message !== "User logged in successfully.") {
-                let msg = '"Problem with Username: "'+this.state.username+'", '+data.error;
+                let msg = '"HM: Username='+this.state.username+'; '+data.error;
                 this.handleLoginError(msg)
             } else {
+                let msg = '"HM: Username="'+this.state.username+'" logged in.';
+                console.log(msg)
                 this.props.setToken(data.sessionToken, this.state.username)
             }
         })

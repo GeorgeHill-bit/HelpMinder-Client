@@ -21,6 +21,7 @@ class EitemSetup extends React.Component {
         this.fetchEitems()
     }
 
+
     fetchEitems = () => {
         fetch("http://localhost:3000/api/log/", {
         method: 'GET',

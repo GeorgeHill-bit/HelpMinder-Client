@@ -56,8 +56,9 @@ class EitemTable extends React.Component {
                         {
                             this.props.eitems.map((eitem, id) => { 
                                 return ( 
-                                    <tr key={id}> 
-                                        <th scope="row">{eitem.id}</th>
+                                    <tr key={eitem.id}> 
+                                        {/* <th scope="row">{eitem.id}</th> */}
+                                        <td>{eitem.id}</td>
                                         <td>{eitem.category}</td>
                                         <td>{eitem.event}</td>
                                         <td>{eitem.due.substr(0,10)}</td>

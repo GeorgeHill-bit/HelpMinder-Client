@@ -18,6 +18,8 @@ class App extends Component {
   }
 
   setSessionState = (token, username) => {
+    console.log(username, token);
+    localStorage.setItem('userName', username);
     localStorage.setItem('token', token);
     this.setState({ 
       sessionToken: token,

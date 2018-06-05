@@ -9,6 +9,6 @@ app.use('/', (req,res) => {
     res.send(`${__dirname}/build/index.html`);
 })
 
-http.listen(process.env.PORT, () => {
+http.listen('process.env.PORT', () => {
     console.log(`web server is running on port ${process.env.PORT}`)
 })

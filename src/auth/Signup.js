@@ -37,17 +37,17 @@ class Signup extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="username">Username</Label>
-                        <Input type="text" name="username" type="text" placeholder="Enter username" onChange={this.handleChange} required />
+                        <Input id="su-username" name="username" type="text" placeholder="Enter username" onChange={this.handleChange} required />
                         {/* <FormFeedback>Enter a valid username (6 character minimum)</FormFeedback> */}
                     </FormGroup>
                     <FormGroup>
                         <Label for="emailaddr">Email Address</Label>
-                        <Input type="text" name="emailaddr" type="text" placeholder="Enter email address" onChange={this.handleChange} required />
+                        <Input id="su-emailaddr" name="mailaddr" type="text" placeholder="Enter email address" onChange={this.handleChange} required />
                         {/* <FormFeedback>Enter a valid email(xxxxx@xxxxxxx.com)</FormFeedback> */}
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input type="password" name="password" type="password" placeholder="Enter password" onChange={this.handleChange} required />
+                        <Input id="su-password" name="password" type="password" placeholder="Enter password" onChange={this.handleChange} required />
                         {/* <FormFeedback>Enter a valid password (6 character minimum)</FormFeedback> */}
                     </FormGroup>
                     <br />

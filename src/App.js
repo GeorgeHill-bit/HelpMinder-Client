@@ -18,9 +18,9 @@ class App extends Component {
   }
 
   setSessionState = (token, username) => {
-    console.log(username, token);
+    // console.log(username, token);
     localStorage.setItem('userName', username);
-    localStorage.setItem('token', token);
+    localStorage.setItem('token', token); 
     this.setState({ 
       sessionToken: token,
       userName: username 
@@ -62,7 +62,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("App.js rendering")
     return (
       <Router>
         <div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, FormFeedback, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class Signup extends Component {
     constructor() {
@@ -35,35 +35,25 @@ class Signup extends Component {
             <div>
                 <h1>Signup</h1>
                 <Form onSubmit={this.handleSubmit}>
-                <FormGroup>
-                        <Label for="firstname">First name</Label>
-                        <Input type="text" name="firstname" value={this.state.firstname} invalid={!this.state.firstnameValid} placeholder="Enter first name" onChange={this.handleChange} required />
-                        <FormFeedback>Enter a valid first name</FormFeedback>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="lastname">Last name</Label>
-                        <Input type="text" name="lastname" value={this.state.lastname} invalid={!this.state.lastnameValid} placeholder="Enter last name" onChange={this.handleChange} required />
-                        <FormFeedback>Enter a valid last name</FormFeedback>
-                    </FormGroup>
                     <FormGroup>
                         <Label for="username">Username</Label>
-                        <Input type="text" name="username" value={this.state.username} invalid={!this.state.usernameValid} placeholder="Enter username" onChange={this.handleChange} required />
-                        <FormFeedback>Enter a valid username (6 character minimum)</FormFeedback>
+                        <Input type="text" name="username" type="text" placeholder="Enter username" onChange={this.handleChange} required />
+                        {/* <FormFeedback>Enter a valid username (6 character minimum)</FormFeedback> */}
                     </FormGroup>
                     <FormGroup>
                         <Label for="emailaddr">Email Address</Label>
-                        <Input type="text" name="emailaddr" value={this.state.emailaddr} invalid={!this.state.emailaddrValid} placeholder="Enter email address" onChange={this.handleChange} required />
-                        <FormFeedback>Enter a valid email(xxxxx@xxxxxxx.com)</FormFeedback>
+                        <Input type="text" name="emailaddr" type="text" placeholder="Enter email address" onChange={this.handleChange} required />
+                        {/* <FormFeedback>Enter a valid email(xxxxx@xxxxxxx.com)</FormFeedback> */}
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input type="password" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="Enter password" onChange={this.handleChange} required />
-                        <FormFeedback>Enter a valid password (6 character minimum)</FormFeedback>
+                        <Input type="password" name="password" type="password" placeholder="Enter password" onChange={this.handleChange} required />
+                        {/* <FormFeedback>Enter a valid password (6 character minimum)</FormFeedback> */}
                     </FormGroup>
                     <br />
                     <Button id="su-Button">Submit</Button>
                 </Form>
-            </div>
+            </div> 
         )
     }
 }

@@ -6,7 +6,7 @@ class Login extends Component {
         super()
         this.state = {
             username: '',
-            email: '',
+            email: '', 
             password: '',
             errmsg: ''
         }
@@ -48,7 +48,7 @@ class Login extends Component {
             errmsg: msg
         })
         console.log(`${this.state.errmsg}`)
-    }
+    } 
 
     render() {
         return(
@@ -65,7 +65,7 @@ class Login extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input id="li-password" name="password"type="password" placeholder="enter password" onChange={this.handleChange}/>
+                        <Input id="li-password" name="password" type="password" placeholder="enter password" onChange={this.handleChange}/>
                         <br />
                         <Button id="li-Button">Submit</Button>
                     </FormGroup>

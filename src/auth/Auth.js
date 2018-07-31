@@ -12,7 +12,7 @@ const Auth = (props) => {
                 <br />
                 <br />
                 <br />
-                <br />
+                <br /> 
                 <br />
             </Row>
             <Row>
@@ -25,7 +25,7 @@ const Auth = (props) => {
                     <Login setToken={props.setToken} />
                 </Col>
             </Row>
-        </Container>
+        </Container> 
     )
 }
 

@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   logout = () => {
-    // console.log('"HelpMinder: User "'+this.state.username+'" logged out.')
+    console.log('"HelpMinder: User "'+this.state.username+'" logged out.')
     this.setState({
       sessionToken: '',
       userName: ''
@@ -55,15 +55,14 @@ class App extends Component {
     } else {
       return (
         <Route path="/auth" >
-          <Auth setToken={this.setSessionState} 
-            />
+          <Auth setToken={this.setSessionState}/>
         </Route>
       )
     }
   }
 
   render() {
-    // console.log("App.js started")
+    console.log("App.js rendering")
     return (
       <Router>
         <div>

@@ -28,7 +28,7 @@ class NavBar extends React.Component {
       }
 
       render() {
-        // {console.log(this.props)}
+        console.log(this.props)
         return (
           <div>
             <Navbar color="dark" dark expand="md">
@@ -39,6 +39,12 @@ class NavBar extends React.Component {
                   <NavItem>
                     <NavLink>{this.props.username}</NavLink> 
                   </NavItem>   
+                  <NavItem>
+                    <NavLink onClick={this.props.signup}>Signup</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink onClick={this.props.login}>Login</NavLink>
+                  </NavItem>
                   <NavItem>
                     <NavLink onClick={this.props.logout}>Logout</NavLink>
                   </NavItem>

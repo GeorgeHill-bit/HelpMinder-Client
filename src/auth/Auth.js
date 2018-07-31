@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Login from './Login';
 import Signup from './Signup';
-import Register from './Register';
 
 
 const Auth = (props) => {
@@ -19,7 +18,7 @@ const Auth = (props) => {
             <Row>
                 <Col md="1" ></Col>
                 <Col md="5" className="signin-col">
-                    <Register setToken={props.setToken} />
+                    <Signup setToken={props.setToken} />
                 </Col>
                 <Col md="1" ></Col>
                 <Col md="5" className="login-col">

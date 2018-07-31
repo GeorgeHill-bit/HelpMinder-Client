@@ -47,6 +47,7 @@ class Login extends Component {
         this.setState({
             errmsg: msg
         })
+        console.log(`${this.state.errmsg}`)
     }
 
     render() {

@@ -18,7 +18,7 @@ class EitemTable extends React.Component {
     // }
 
     update(e, eitem) {
-        // console.log("EitemTable - update")
+        console.log("EitemTable - update")
         this.setState({
             eitem: eitem,
             updatePressed: true        
@@ -41,14 +41,14 @@ class EitemTable extends React.Component {
                         <tr>
                             <th>#</th>
                             <th width="150">Category</th>
-                            <th width="300">Event</th>
+                            <th width="400">Event</th>
                             <th width="150">DateDue</th>
                             <th width="150">Frequency</th>
                             <th width="150">Owner</th>
                             <th width="150">Location</th>
-                            <th width="300">Purpose</th>
-                            <th width="150">Created</th>
-                            <th width="150">Updated</th>
+                            <th width="400">Purpose</th>
+                            {/* <th width="150">Created</th> */}
+                            {/* <th width="150">Updated</th> */}
                             <td><Button id="create" onClick={e => this.props.create(e)} size="sm" color="primary">Create</Button></td>
                         </tr>
                     </thead>
@@ -66,8 +66,8 @@ class EitemTable extends React.Component {
                                         <td>{eitem.owner}</td>
                                         <td>{eitem.location}</td>
                                         <td>{eitem.purpose}</td>
-                                        <td>{eitem.createdAt.substr(0,10)}</td>
-                                        <td>{eitem.updatedAt.substr(0,10)}</td>
+                                        {/* <td>{eitem.createdAt.substr(0,10)}</td> */}
+                                        {/* <td>{eitem.updatedAt.substr(0,10)}</td> */}
                                         <td><Button id={eitem.id} onClick={e => this.props.update(e, eitem)} size="sm" color="primary">Update</Button></td>
                                         <td><Button id={eitem.id} onClick={e => this.props.delete(e, eitem)} size="sm" color="warning">Delete</Button></td>
                                     </tr>

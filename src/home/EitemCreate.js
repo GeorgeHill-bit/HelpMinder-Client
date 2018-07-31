@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Button, Form, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import { Button, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 class EitemCreate extends React.Component {
     constructor(props) {

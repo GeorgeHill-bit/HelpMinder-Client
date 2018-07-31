@@ -64,6 +64,7 @@ class Register extends Component {
     }
 
     handleSubmit = (event) => {
+        console.log("Signup submitted")
         if (this.state.usernameValid && this.state.emailaddrValid && this.state.passwordValid) {
             fetch("http://localhost:3000/api/user", {
                 method: 'POST',
@@ -83,7 +84,7 @@ class Register extends Component {
     render() {
         return (
             <div>
-                <h2>Register for account</h2>
+                <h2>Signup for account</h2>
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
                         <Label for="firstname">First name</Label>
